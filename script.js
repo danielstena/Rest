@@ -1,3 +1,5 @@
+
+
 function saveHoroscope(){
     $.ajax({
         url: "addHoroscope.php",
@@ -9,7 +11,13 @@ function saveHoroscope(){
             runView();
         }   
     });
+    $("#saveMyHoroscopeDiv").hide();
+    $("#updateMyHoroscopeDiv").show();
+    $("#eraseDiv").show();
+    
 };
+
+
 
 function updateHoroscope(){
     $.ajax({
@@ -20,8 +28,6 @@ function updateHoroscope(){
         },
         success: function(results){
             $("#content").html(results);
-
-            // runView();
         }   
     });
 };
@@ -35,6 +41,9 @@ function eraseHoroscope(){
             $("#content").html(results);
         }   
     });
+    $("#saveMyHoroscopeDiv").show();
+    $("#updateMyHoroscopeDiv").hide();
+    $("#eraseDiv").hide();
 };
 
 function runView(){
@@ -42,7 +51,7 @@ function runView(){
         url: "viewHoroscope.php",
         method: "GET",
         success: function(results){
-            $("#content").append(results);
+            $("#content").html(results);
         }
     });
 };   

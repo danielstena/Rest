@@ -8,8 +8,6 @@ require "data.php";
 if(updateSign($horoskop, $month, $day) == "true"){
     echo "<script>runView();</script>";
 }
-else{
-    echo "Finns inget juuuee";
-}
+
 
 

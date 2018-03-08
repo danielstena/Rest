@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="script.js"></script>
+    <script>;</script>
 </head>
 <body>
     <div id="wrapper">
@@ -17,19 +18,22 @@
         </div>
         <input type="number" placeholder="åå-mm-dd" name="personalNumber" id="personalNumber"/>
         <div id="buttonsDiv">
-            <div>
-                <button onclick="saveHoroscope()">Spara mitt horoscop</button>
+            <div id="saveMyHoroscopeDiv">
+                <button id="test" onclick="saveHoroscope()">Spara mitt horoscop</button>
             </div>
-            <div>
+            
+            <div id="updateMyHoroscopeDiv">
                 <button onclick="updateHoroscope()">Uppdatera mitt horoscop</button>
             </div>
-            <div>
+            <div id="eraseDiv">
                 <button onclick="eraseHoroscope()">Radera mitt horoscop</button>
             </div>
         </div>
     </div>
 <script>
     runView();
+    $("#updateMyHoroscopeDiv").hide()
+    $("#eraseDiv").hide();
 </script>
 
 </body>
