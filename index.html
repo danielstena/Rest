@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Horoscope</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -11,10 +11,11 @@
 </head>
 <body>
     <div id="wrapper">
+        <h1>Horoskop</h1>
         <div id="content">
-
+            <!-- Horoskopet -->
         </div>
-        <input type="number" name="personalNumber" id="personalNumber"/>
+        <input type="number" placeholder="åå-mm-dd" name="personalNumber" id="personalNumber"/>
         <div id="buttonsDiv">
             <div>
                 <button onclick="saveHoroscope()">Spara mitt horoscop</button>
@@ -27,20 +28,9 @@
             </div>
         </div>
     </div>
-
-    <!-- <div id="wrapper">
-            <h1>
-                Hej!
-            </h1>
-            <p>Ange ditt födelsedatum</p>
-            <input type="date" name="personalNumber" id="personalNumber"/>
-            <button onclick="sendForm()">send information</button>
-            <div id="restart">
-                <a href="restart.php"><button id="restart">restart</button></a>
-            </div>
-        </div>
-        
-        </div>  -->
+<script>
+    runView();
+</script>
 
 </body>
 </html>

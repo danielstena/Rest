@@ -5,17 +5,44 @@ function saveHoroscope(){
         data:{
            "personnr": $("#personalNumber").val()
         },
+        success: function(){
+            runView();
+        }   
+    });
+};
+
+function updateHoroscope(){
+    $.ajax({
+        url: "updateHoroscope.php",
+        method: "PUT",
+        data:{
+           "personnr": $("#personalNumber").val()
+        },
+        success: function(results){
+            $("#content").html(results);
+
+            // runView();
+        }   
+    });
+};
+
+//Funktion för att radera det sparade horoskopet.
+function eraseHoroscope(){
+    $.ajax({
+        url: "deleteHoroscope.php",
+        method: "DELETE",
         success: function(results){
             $("#content").html(results);
         }   
     });
 };
-function runGet(){
+
+function runView(){
     $.ajax({
-        url: "gethoroscope.php",
-        method: "POST",
+        url: "viewHoroscope.php",
+        method: "GET",
         success: function(results){
-            $("#wrapper").html(results);
+            $("#content").append(results);
         }
     });
 };   
