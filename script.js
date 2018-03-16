@@ -15,9 +15,8 @@ function saveHoroscope(){
             else{
                 alert("Du måste ange personnr");
             };
-        }
+        },
     });
-    
 };
 
 
