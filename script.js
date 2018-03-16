@@ -11,9 +11,8 @@ function saveHoroscope(){
             runView();
         }   
     });
-    $("#saveMyHoroscopeDiv").hide();
-    $("#updateMyHoroscopeDiv").show();
-    $("#eraseDiv").show();
+
+    // Flytta dom till if satsen om det finns info i session
     
 };
 
@@ -27,7 +26,11 @@ function updateHoroscope(){
            "personnr": $("#personalNumber").val()
         },
         success: function(results){
-            $("#content").html(results);
+           
+            if(results == "true"){
+                runView();
+            }
+
         }   
     });
 };
@@ -38,7 +41,12 @@ function eraseHoroscope(){
         url: "deleteHoroscope.php",
         method: "DELETE",
         success: function(results){
-            $("#content").html(results);
+            if(results == "true"){
+                $("#content").html("Ditt horoskop är nu borta");
+            }
+            else{
+                $("#content").html("Det finns inget horoskop sparat");
+            }
         }   
     });
     $("#saveMyHoroscopeDiv").show();
@@ -51,7 +59,20 @@ function runView(){
         url: "viewHoroscope.php",
         method: "GET",
         success: function(results){
-            $("#content").html(results);
+        $("#content").html(results);
+        if(results != ""){
+            $("#saveMyHoroscopeDiv").hide();
+            $("#updateMyHoroscopeDiv").show();
+            $("#eraseDiv").show();
+           
+        }
+        else{
+            $("#updateMyHoroscopeDiv").hide()
+            $("#eraseDiv").hide();
+            alert("Du måste ange personnr")
+        };
+        
+
         }
     });
 };   

@@ -12,15 +12,20 @@ function calculateSign($horoskop, $month, $day){
             if ($month == $a->minMonth and $day >= $a->minDay ){
                 $_SESSION["usersSign"] = $a->name;
                 $_SESSION["description"] = $a->description;
-                // echo $_SESSION["usersSign"];
+                $_SESSION["image"] = $a->image;
+                
                 
             }
             elseif($month == $a->maxMonth and $day <= $a->maxDay  ){
                 $_SESSION["usersSign"] = $a->name;
                 $_SESSION["description"] = $a->description;
-                // echo $_SESSION["usersSign"];
+                $_SESSION["image"] = $a->image;
+                
             }
         }
+    }
+    else{
+        echo "<script> alert('nooooo')</script>";
     }
 }
 
@@ -37,18 +42,17 @@ function updateSign($horoskop, $month, $day){
             if ($month == $a->minMonth and $day >= $a->minDay ){
                 $_SESSION["usersSign"] = $a->name;
                 $_SESSION["description"] = $a->description;
-                return "true";
+                echo "true";
                 
             }
             elseif($month == $a->maxMonth and $day <= $a->maxDay  ){
                 $_SESSION["usersSign"] = $a->name;
                 $_SESSION["description"] = $a->description;
-                return "true";
+                echo "true";
             }
         }
     }
     else{
-        return "false";
+        echo "false";
     }
-    echo $_SESSION["usersSign"];
 }

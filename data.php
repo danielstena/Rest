@@ -7,7 +7,11 @@
         public $minDay;
         public $maxDay;
         public $description;
-        public $image;
+        protected $image;
+
+        // public function draw() {
+        //     echo "<img src='img/".$this->image."' class='image'>";
+        // }
 
         function __construct($name, $minMonth, $maxMonth, $minDay, $maxDay, $description){
             $this->name = $name;
@@ -16,8 +20,7 @@
             $this->minDay = $minDay;
             $this->maxDay = $maxDay;
             $this->description = $description;
-            $this->img = $image;
-            
+            $this->image = $image;
         }    
     }     
 
@@ -39,7 +42,7 @@
         <br/> Element: Luft"),
         $kräftan =  new Horoscope("kräftan", 6, 7, 23, 22,"Född: 22 juni - 22 juli <br/>
         Föräldern, beskyddaren, bevararen, den trofaste, den lojale & sympatiske
-        <br/> Element: Vatten"),
+        <br/> Element: Vatten","cancer.jpg"),
         $lejonet =  new Horoscope("lejon", 7, 8, 23, 22,"Född: 23 juli - 22 augusti <br/>
         Storsint, kärleksfull, viljestark, svarsjuk, ledare, trofast, plikttrogen
         <br/> Element: Solen"),

@@ -1,5 +1,6 @@
 body{
-    background-color:lightgray;
+    background-image: url("img/background.jpg");
+    color:rgb(209, 207, 207);
 }
 #wrapper{
     width:70%;
@@ -8,8 +9,8 @@ body{
     text-align: center;
 }
 #content{
-    background-color: white;
-    height:350px;
+    text-shadow: 10%;
+    height:250px;
     width:550px;
     margin:auto;
     margin-top:30px;
