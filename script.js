@@ -7,12 +7,16 @@ function saveHoroscope(){
         data:{
            "personnr": $("#personalNumber").val()
         },
-        success: function(){
-            runView();
-        }   
+        
+        success: function(results){
+            if(results != ""){
+                runView();
+            }  
+            else{
+                alert("Du måste ange personnr");
+            };
+        }
     });
-
-    // Flytta dom till if satsen om det finns info i session
     
 };
 
@@ -30,7 +34,6 @@ function updateHoroscope(){
             if(results == "true"){
                 runView();
             }
-
         }   
     });
 };
@@ -59,20 +62,15 @@ function runView(){
         url: "viewHoroscope.php",
         method: "GET",
         success: function(results){
-        $("#content").html(results);
-        if(results != ""){
-            $("#saveMyHoroscopeDiv").hide();
-            $("#updateMyHoroscopeDiv").show();
-            $("#eraseDiv").show();
-           
-        }
-        else{
-            $("#updateMyHoroscopeDiv").hide()
-            $("#eraseDiv").hide();
-            alert("Du måste ange personnr")
-        };
-        
-
+            $("#content").html(results);
+            if(results != ""){
+                $("#saveMyHoroscopeDiv").hide();
+                $("#updateMyHoroscopeDiv").show();
+                $("#eraseDiv").show();
+            } else{
+                $("#updateMyHoroscopeDiv").hide()
+                $("#eraseDiv").hide();
+            };
         }
     });
 };   
