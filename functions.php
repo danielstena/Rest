@@ -12,25 +12,20 @@ function calculateSign($horoskop, $month, $day){
             if ($month == $a->minMonth and $day >= $a->minDay ){
                 $_SESSION["usersSign"] = $a->name;
                 $_SESSION["description"] = $a->description;
-                $_SESSION["image"] = $a->image;
-                
+                echo "true";
                 
             }
             elseif($month == $a->maxMonth and $day <= $a->maxDay  ){
                 $_SESSION["usersSign"] = $a->name;
                 $_SESSION["description"] = $a->description;
-                $_SESSION["image"] = $a->image;
-                
+                echo "true";
             }
         }
-    }
-    else{
-        echo "<script> alert('nooooo')</script>";
     }
 }
 
 function updateSign($horoskop, $month, $day){
-    #kod för att bara ta dom fyra sista.
+
     parse_str(file_get_contents("php://input"), $_PUT);
     $personnummer = $_PUT["personnr"];
 
@@ -55,4 +50,4 @@ function updateSign($horoskop, $month, $day){
     else{
         echo "false";
     }
-}
+};

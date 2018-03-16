@@ -1,10 +1,5 @@
 http://danielstena.wieg17.se/rest/
 
-<!-- KVAR ATT GÖRA:
-1. Fixa så att det inte sparas nått när man inte fyller i något.
-2. Fixa så att man inte kan gå direkt in på delete och view.php. 
- -->
-
 UPPGIFTEN 
 Målet med uppgiften är att bygga ett enkelt REST API för sitt horoskop. Ni ska minst använda följande php filer i ert projekt: 
 -----------------------------------------------------------------

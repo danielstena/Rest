@@ -1,5 +1,5 @@
 
-
+//Funktion för spara horoskopet
 function saveHoroscope(){
     $.ajax({
         url: "addHoroscope.php",
@@ -19,8 +19,7 @@ function saveHoroscope(){
     });
 };
 
-
-
+//Funktion för att uppdatera det sparade horoskopet.
 function updateHoroscope(){
     $.ajax({
         url: "updateHoroscope.php",
